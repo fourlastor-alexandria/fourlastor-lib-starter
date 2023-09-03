@@ -28,31 +28,40 @@ java {
     withSourcesJar()
 }
 
+val libraryArtifact = "library"
+val libraryName = "Library"
+val libraryDescription = "Library description"
+val libraryUrl = "https://www.github.com/fourlastor-alexandria/library"
+val licenseUrl = "$libraryUrl/blob/main/LICENSE"
+val licenseName = "MIT License"
+val developerId = "fourlastor"
+val developerName = "Daniele Conti"
+
 publishing {
     publications {
         create<MavenPublication>("mavenJava") {
-            artifactId = "harlequin"
+            artifactId = libraryArtifact
             from(components["java"])
             pom {
-                name.set("Harlequin")
-                description.set("A set of extensions for libGDX's scene2d")
-                url.set("https://www.github.com/fourlastor/harlequin")
+                name.set(libraryName)
+                description.set(libraryDescription)
+                url.set(libraryUrl)
                 licenses {
                     license {
-                        name.set("MIT License")
-                        url.set("https://github.com/fourlastor/harlequin/blob/main/LICENSE")
+                        name.set(licenseName)
+                        url.set(licenseUrl)
                     }
                 }
                 developers {
                     developer {
-                        id.set("fourlastor")
-                        name.set("Daniele Conti")
+                        id.set(developerId)
+                        name.set(developerName)
                     }
                 }
                 scm {
-                    connection.set("scm:git:https://www.github.com/fourlastor/harlequin.git")
-                    developerConnection.set("scm:git:https://www.github.com/fourlastor/harlequin.git")
-                    url.set("https://www.github.com/fourlastor/harlequin")
+                    connection.set("scm:git:$libraryUrl.git")
+                    developerConnection.set("scm:git:$libraryUrl.git")
+                    url.set(libraryUrl)
                 }
             }
         }

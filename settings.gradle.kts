@@ -1,8 +1,7 @@
 @file:Suppress("UnstableApiUsage")
 
-include(":harlequin")
-include(":harlequin-ashley")
+include(":lib")
 
 dependencyResolutionManagement {
-    versionCatalogs { create("libs") { from(files("libs.versions.toml")) } }
+    versionCatalogs { create("libs") }
 }
