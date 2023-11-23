@@ -1,5 +1,3 @@
-@file:Suppress("UnstableApiUsage")
-
 include(":lib")
 
 dependencyResolutionManagement {
