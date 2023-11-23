@@ -69,6 +69,7 @@ publishing {
 }
 
 signing {
+    setRequired({ project.hasProperty("RELEASE") })
     val signingKey: String? by project
     val signingPassword: String? by project
     useInMemoryPgpKeys(signingKey, signingPassword)
